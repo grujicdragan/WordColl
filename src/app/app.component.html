@@ -1,3 +1,21 @@
-<app-header></app-header>
-
-<app-videos></app-videos>
+<style>#wrapper {width: 100%;} 
+        #wrapper .container {max-width: 100%; display: block;}</style>  
+    
+    <!-- header -->
+    <app-header></app-header>
+    <div id="wrapper" > <!--class="jumbotron jumbtron-fluid"-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 offset-md-1">
+           
+           
+            <!-- routes will be rendered here -->
+            <router-outlet></router-outlet> 
+            <app-videos></app-videos>
+    
+            <!-- footer -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
