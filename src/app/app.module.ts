@@ -5,13 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { VideosComponent } from './videos/videos.component';
+import { DescriptionComponent } from './description/description.component';
+import { LinklistComponent } from './linklist/linklist.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    VideosComponent    
+    VideosComponent,
+    DescriptionComponent,
+    LinklistComponent    
   ],
   imports: [
     BrowserModule,
