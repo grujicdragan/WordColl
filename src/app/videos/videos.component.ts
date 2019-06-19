@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../models/carousel-item.model';
+import { ItemServiceService } from '../services/item-service.service';
+import { Item } from '../models/item.model';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-videos',
@@ -8,26 +11,29 @@ import { Item } from '../models/carousel-item.model';
 })
 export class VideosComponent implements OnInit {
 
+  result : Item;
 
 
-  constructor() {
+
+  constructor(
+    private itemService : ItemServiceService,
+    private http: HttpClient
+    ) { 
 
   }
 
   ngOnInit() {
-    // var item : Item[];
-    // item[0].decription="dsadasdda";
-    // item[0].title="dsadadsa";
-    // item[0].videoURL="https://www.youtube.com/embed/EL01-Xztuf8";
-    // item[1].decription="dsadasdda";
-    // item[1].title="dsadadsa";
-    // item[1].videoURL="https://www.youtube.com/embed/EL01-Xztuf8";
-    // item[2].decription="dsadasdda";
-    // item[2].title="dsadadsa";
-    // item[2].videoURL="https://www.youtube.com/embed/EL01-Xztuf8";
-    // item[3].decription="dsadasdda";
-    // item[3].title="dsadadsa";
-    // item[3].videoURL="https://www.youtube.com/embed/EL01-Xztuf8";
+
+    this.itemService.getItems().subscribe(v => {
+      this.result = v;
+      console.log("rezultat");
+      console.log(this.result);
+    },(err) => {
+      console.log('err',err)
+    }, () => {
+      console.log('odradio')
+    })
+  
   }
 
 }

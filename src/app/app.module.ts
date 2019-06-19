@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { VideosComponent } from './videos/videos.component';
 import { DescriptionComponent } from './description/description.component';
 import { LinklistComponent } from './linklist/linklist.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -15,11 +16,12 @@ import { LinklistComponent } from './linklist/linklist.component';
     HeaderComponent,
     VideosComponent,
     DescriptionComponent,
-    LinklistComponent    
+    LinklistComponent 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
