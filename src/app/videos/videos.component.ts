@@ -11,8 +11,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VideosComponent implements OnInit {
 
-  result : Item;
-
+  item : Item[];
+  yt : string = "http://www.youtube.com/embed/sFk9SN6x0c8";
+  public bindSRC : string = "yt + item[0].value";
 
 
   constructor(
@@ -24,10 +25,10 @@ export class VideosComponent implements OnInit {
 
   ngOnInit() {
 
-    this.itemService.getItems().subscribe(v => {
-      this.result = v;
+    this.itemService.getItems().subscribe(data => {
+      this.item = data;
       console.log("rezultat");
-      console.log(this.result);
+      console.log(this.item);
     },(err) => {
       console.log('err',err)
     }, () => {
