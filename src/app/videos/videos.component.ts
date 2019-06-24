@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VideosComponent implements OnInit {
 
-  item : Item[];
+  public items : Item[];
   yt : string = "http://www.youtube.com/embed/sFk9SN6x0c8";
   public bindSRC : string = "yt + item[0].value";
 
@@ -26,15 +26,19 @@ export class VideosComponent implements OnInit {
   ngOnInit() {
 
     this.itemService.getItems().subscribe(data => {
-      this.item = data;
+      this.items = data;
       console.log("rezultat");
-      console.log(this.item);
+      console.log(this.items);
     },(err) => {
       console.log('err',err)
     }, () => {
       console.log('odradio')
     })
   
+  }
+
+  prepareExternalUrl(code){
+    window.open("https://www.youtube.com/embed/" + code ,'_blank');
   }
 
 }
