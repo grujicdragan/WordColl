@@ -9,7 +9,7 @@ import { Item } from '../models/item.model';
   styleUrls: ['./linklist.component.css']
 })
 export class LinklistComponent implements OnInit {
-  result: Item;
+  result: Item[];
 
   constructor(
     private itemService:ItemServiceService,
