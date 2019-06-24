@@ -9,7 +9,7 @@ import { Item } from '../models/item.model';
   styleUrls: ['./linklist.component.css']
 })
 export class LinklistComponent implements OnInit {
-  result: Item[];
+  items : Item[];
 
   constructor(
     private itemService:ItemServiceService,
@@ -17,15 +17,19 @@ export class LinklistComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.itemService.getItems().subscribe(v => {
-      this.result = v;
+    this.itemService.getItems().subscribe(data => {
+      this.items = data;
       console.log("rezultat");
-      console.log(this.result);
+      console.log(this.items);
     },(err) => {
       console.log('err',err);
     }, () => {
       console.log("odradio");
     })
+  }
+
+  prepareExternalUrl(code){
+    window.open(code ,'_blank');
   }
 
 }
