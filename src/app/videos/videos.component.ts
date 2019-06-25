@@ -14,7 +14,8 @@ export class VideosComponent implements OnInit {
 
   public items : Item[];
   public test : any;
-  public itemsVideo : any;
+  public itemsVideo: Item[];
+  public itemsUrl: Item[];
 
   yt : string = "http://www.youtube.com/embed/sFk9SN6x0c8";
   public bindSRC : string = "yt + item[0].value";
@@ -32,28 +33,40 @@ export class VideosComponent implements OnInit {
 
   ngOnInit() {
 
+    this.itemsVideo = new Array;
+    this.itemsUrl = new Array;
+
     this.itemService.getItems().subscribe(data => {
       this.items = data;
       this.test = this.items;
-      console.log("rezultat");
-      console.log(this.items);
-      console.log(this.test.items.length);
-      console.log(this.test.items[0].type);
       for(let i =0; i < this.test.items.length; i++){
         if(this.test.items[i].type == 'video'){
           this.test.items[i].completeUrl = this.sanitizer.bypassSecurityTrustResourceUrl('http://www.youtube.com/embed/'+ this.test.items[i].value);
-          console.log(this.test.items[i].completeUrl);
+          //console.log(this.test.items[i].completeUrl);
         }else{
           this.test.items[i].completeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.test.items[i].value);
         }
 
       }
 
-      for(let i =0; i < this.test.items.length; i++){
+      for(let i=0; i < this.test.items.length; i++){
         if(this.test.items[i].type == 'video'){
-            this.itemsVideo = this.test;
-            console.log(this.itemsVideo);
-
+          let tempItem = new Item;
+          tempItem._id = this.test.items[i]._id;
+          tempItem.completeUrl = this.test.items[i].completeUrl;
+          tempItem.title = this.test.items[i].title;
+          tempItem.description = this.test.items[i].description;
+          tempItem.value = this.test.items[i].value;
+          this.itemsVideo.push(tempItem);
+        }
+        else{
+          let tempItem = new Item;
+          tempItem._id = this.test.items[i]._id;
+          tempItem.completeUrl = this.test.items[i].completeUrl;
+          tempItem.title = this.test.items[i].title;
+          tempItem.description = this.test.items[i].description;
+          tempItem.value = this.test.items[i].value;
+          this.itemsUrl.push(tempItem);
         }
       }
       
