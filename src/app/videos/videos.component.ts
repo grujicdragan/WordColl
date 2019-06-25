@@ -14,6 +14,7 @@ export class VideosComponent implements OnInit {
 
   public items : Item[];
   public test : any;
+  public itemsVideo : any;
 
   yt : string = "http://www.youtube.com/embed/sFk9SN6x0c8";
   public bindSRC : string = "yt + item[0].value";
@@ -46,6 +47,14 @@ export class VideosComponent implements OnInit {
           this.test.items[i].completeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.test.items[i].value);
         }
 
+      }
+
+      for(let i =0; i < this.test.items.length; i++){
+        if(this.test.items[i].type == 'video'){
+            this.itemsVideo = this.test;
+            console.log(this.itemsVideo);
+
+        }
       }
       
 
