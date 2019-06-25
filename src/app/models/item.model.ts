@@ -6,6 +6,7 @@ export class Item {
     public description : string;
     public image : string;
     public _id : string;
+    public completeUrl:string;
 }
 
 

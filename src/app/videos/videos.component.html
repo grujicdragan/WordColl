@@ -5,7 +5,8 @@
   
     <div class="col-md-3" *ngFor="let item of items.items" style="padding-bottom: 50px">
       <div *ngIf="item.type == 'video'">
-        <iframe class="controls" width="100%" height="150px" [src]="controllerSrc" frameborder="0" allowfullscreen></iframe>
+        <iframe class="controls" width="100%" height="150px" [src]="item.completeUrl" frameborder="0" allowfullscreen></iframe>
+        
         <a class="h4 title" (click)="prepareExternalUrl(item.value)" target="_blank">{{item.title}}</a>
         <p class="desc">{{item.description}}</p>
       </div>
