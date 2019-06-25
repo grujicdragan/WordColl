@@ -1,144 +1,28 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="padding: 0 5px 0 5px;">
-  <div class="carousel-inner" style="display: table;">
-    <div class="carousel-item active">
-      <div class="row">
-        <div class="col-md-4" >
-          <iframe width="105%" height="200px" src="https://www.youtube.com/embed/EL01-Xztuf8" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-              max-height: 100px; 
-              text-overflow: ellipsis; 
-              word-wrap: break-word; 
-              overflow: auto;
-              width: 105%;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height=ada das adasdasd adasd "200px"
-            src="https://wdsad da dsadasda d da dasa dasadsda dadaddaadd adadaas ad sadasd adasda dasd sda dsadsad
-            adasad adsadsada dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-        <div class="col-md-4" >
-          <iframe width="105%" height="200px" src="https://www.youtube.com/embed/zoZQJZhgcMM" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;
-          width: 105%;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height="200px"
-            srcdasdadsa="https://wdsad da dsadasdsadasddasdadsadsdasdasda sdada d dada dadaddaadd adada dasda dasd adas dsad
-            adsadsada dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-        <div class="col-md-4" >
-          <iframe width="105%" height="200px" src="https://www.youtube.com/embed/KP5JWWIQVS0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;
-          width: 100%;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height="200px" src="https://wdsadasd
-            dsad da dsadasda d dada dadaddaadd adaddsadad dada dada da adsadasda dasda dsaasad adsadsada
-            dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-      </div>
+<div style="padding-top: 30px">
+  <h3 class="articleTitle">Videos</h3>
+  <hr style="margin-top: 0">
+  <div class="row">
+  
+    <div class="col-md-3" *ngFor="let item of itemsVideo" style="padding-bottom: 50px">
+      
+        <iframe class="controls" width="100%" height="150px" [src]="item.completeUrl" frameborder="0" allowfullscreen></iframe>
+        
+        <a class="h4 title" (click)="prepareExternalUrl(item.value)" target="_blank">{{item.title}}</a>
+        <p class="desc">{{item.description}}</p>
+      
     </div>
-    <!--<div class="carousel-item">
-      <div class="row">
-        <div class="col-md-4">
-          <iframe width="100%" height="200px" src="https://www.youtube.com/embed/EL01-Xztuf8" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height=ada das adasdasd adasd "200px"
-            src="https://wdsad da dsadasda d da dasa dasadsda dadaddaadd adadaas ad sadasd adasda dasd sda dsadsad
-            adasad adsadsada dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-        <div class="col-md-4">
-          <iframe width="100%" height="200px" src="https://www.youtube.com/embed/zoZQJZhgcMM" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height="200px"
-            srcdasdadsa="https://wdsad da dsadasdasdadsadsdasdasda sdada d dada dadaddaadd adada dasda dasd adas dsad
-            adsadsada dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-        <div class="col-md-4">
-          <iframe width="100%" height="200px" src="https://www.youtube.com/embed/KP5JWWIQVS0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height="200px" src="https://wdsadasd
-            dsad da dsadasda d dada dadaddaadd adaddsadad dada dada da adsadasda dasda dsaasad adsadsada
-            dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="row">
-        <div class="col-md-4">
-          <iframe width="100%" height="200px" src="https://www.youtube.com/embed/EL01-Xztuf8" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height=ada das adasdasd adasd "200px"
-            src="https://wdsad da dsadasda d da dasa dasadsda dadaddaadd adadaas ad sadasd adasda dasd sda dsadsad
-            adasad adsadsada dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-        <div class="col-md-4">
-          <iframe width="100%" height="200px" src="https://www.youtube.com/embed/zoZQJZhgcMM" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height="200px"
-            srcdasdadsa="https://wdsad da dsadasdasdadsadsdasdasda sdada d dada dadaddaadd adada dasda dasd adas dsad
-            adsadsada dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-        <div class="col-md-4">
-          <iframe width="100%" height="200px" src="https://www.youtube.com/embed/KP5JWWIQVS0" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h5 style="text-align: center; font-weight: bold"> SOME TITLE</h5>
-          <p style="
-          max-height: 100px; 
-          text-overflow: ellipsis; 
-          word-wrap: break-word; 
-          overflow: auto;">
-            DADADSsdasdadadadasdasaaaaaaaaaaae dsada sad ad a das daswidth="100%" height="200px" src="https://wdsadasd
-            dsad da dsadasda d dada dadaddaadd adaddsadad dada dada da adsadasda dasda dsaasad adsadsada
-            dsaaww.youtube.c" frameborder="0" allaccele</p>
-        </div>
-      </div>
-    </div>-->
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="width: 5%; height: 60%;">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="width: 5%; height: 60%;">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+</div>
+
+
+<div style="padding-top: 30px">
+  <h3 class="articleTitle">Articles</h3>
+  <hr style="margin-top: 0">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let item of itemsUrl" style="padding-bottom: 50px">
+        <p class="fontSize">{{item.value}}</p>
+        <a class="h4 title" (click)="prepareExternalUrl(item.completeUrl)" target="_blank">{{item.title}}</a>
+        <p class="desc">{{item.description}}</p>
+    </div>
+  </div>
 </div>
